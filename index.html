@@ -1,69 +1,148 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Raqam Book – Aapka digital khaata</title>
+<meta name="description" content="Raqam Book: dukaan aur ghar ka digital khaata. Customer udhaar, bikri, kharcha aur staff salary.">
 <style>
-:root{--cream:#FBF4E9;--surf:#F8EFE2;--muted:#F3E8D8;--border:#EADCC8;--ink:#3A2318;--inkm:#6E5446;--choc:#5B2B17;--deep:#4A2618;--onch:#E9D5C0;--green:#0E9F4F;--gl:#E3F4EA;--cherry:#E02424;--cl:#FCE4E2}
+:root{--cream:#FBF4E9;--surf:#F8EFE2;--muted:#F3E8D8;--border:#EADCC8;--ink:#3A2318;--inkm:#6E5446;--choc:#5B2B17;--deep:#3F1D10;--onch:#E9D5C0;--green:#0E9F4F;--gl:#E3F4EA;--cherry:#E02424;--cl:#FCE4E2}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:Roboto,"Segoe UI",Arial,sans-serif;line-height:1.55}
-a{color:inherit}.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-header{border-bottom:1px solid var(--border);background:var(--cream)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--choc);text-decoration:none}
-.brand img{width:36px;height:36px;border-radius:9px}
-.nav a.link{color:var(--inkm);text-decoration:none;font-weight:600;margin-left:22px;font-size:15px}
-.hero{padding:52px 0 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
-h1{font-size:44px;line-height:1.1;margin:0 0 14px;color:var(--choc);letter-spacing:-.5px}
-.lead{font-size:19px;color:var(--inkm);margin:0 0 24px}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--choc);color:var(--cream);padding:14px 24px;border-radius:30px;font-weight:800;font-size:16px;text-decoration:none}
-.btn small{display:block;font-weight:500;font-size:11px;color:var(--onch);line-height:1}
-.btn b{display:block;line-height:1.15}
-.sub{margin-top:12px;color:var(--inkm);font-size:14px}
-.phone{justify-self:center;width:260px;border:7px solid var(--choc);border-radius:34px;overflow:hidden;background:var(--cream);box-shadow:0 18px 40px rgba(91,43,23,.18)}
-.phone img{display:block;width:100%;aspect-ratio:9/17;object-fit:cover;object-position:top}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:8px 0 44px}
-.card{background:var(--surf);border:1px solid var(--border);border-radius:18px;padding:18px}
-.card .ic{width:44px;height:44px;border-radius:50%;background:var(--muted);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:10px}
-.card h3{margin:0 0 6px;font-size:17px;color:var(--choc)}.card p{margin:0;color:var(--inkm);font-size:14.5px}
-.band{background:var(--deep);color:var(--cream)}
-.band .wrap{padding:40px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.band h4{margin:0 0 6px;font-size:18px}.band p{margin:0;color:var(--onch);font-size:14.5px}
-.band .n{display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--cream);color:var(--choc);font-weight:800;align-items:center;justify-content:center;margin-bottom:10px}
-.shots{padding:46px 0;text-align:center}.shots h2{color:var(--choc);font-size:30px;margin:0 0 6px}.shots p{color:var(--inkm);margin:0 0 26px}
-.row{display:flex;gap:20px;justify-content:center}.row .phone{width:210px;border-width:6px;border-radius:28px;box-shadow:none}
-.cta{text-align:center;padding:10px 0 54px}
-.cta h2{color:var(--choc);font-size:30px;margin:0 0 14px}
-footer{border-top:1px solid var(--border);background:var(--surf);color:var(--inkm);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;padding:22px 20px;flex-wrap:wrap;gap:10px}
-footer a{font-weight:700;color:var(--choc)}
-@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:30px}h1{font-size:34px}.phone{width:230px}
-.cards{grid-template-columns:1fr 1fr}.band .wrap{grid-template-columns:1fr}.row{flex-wrap:wrap}.nav a.link.hide{display:none}}
-@media(max-width:480px){.cards{grid-template-columns:1fr}}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Roboto,"Segoe UI",Arial,sans-serif;line-height:1.55;overflow-x:hidden}
+a{color:inherit}.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:20;background:rgba(251,244,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--choc);text-decoration:none}.brand img{width:34px;height:34px;border-radius:9px}
+.nav nav a{color:var(--inkm);text-decoration:none;font-weight:600;margin-left:20px;font-size:14.5px}
+.nav .dl{background:var(--choc);color:var(--cream);padding:8px 16px;border-radius:20px}
+/* hero */
+.hero{background:radial-gradient(900px 500px at 80% 40%,#7a3b22 0,var(--deep) 60%);color:var(--cream);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding-top:56px;padding-bottom:64px}
+.tag{display:inline-block;background:rgba(251,244,233,.12);border:1px solid rgba(251,244,233,.25);padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:16px}
+h1{font-size:48px;line-height:1.08;margin:0 0 16px;letter-spacing:-.8px}
+h1 em{font-style:normal;color:#F2C48D}
+.lead{font-size:18.5px;color:var(--onch);margin:0 0 26px;max-width:470px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--cream);color:var(--choc);padding:13px 24px;border-radius:30px;font-weight:800;font-size:16px;text-decoration:none;transition:transform .2s}
+.btn:hover{transform:translateY(-2px) scale(1.03)}.btn small{display:block;font-weight:600;font-size:10.5px;color:var(--inkm);line-height:1}.btn b{display:block;line-height:1.15}
+.btn.dark{background:var(--choc);color:var(--cream)}.btn.dark small{color:var(--onch)}
+.sub{margin-top:14px;color:var(--onch);font-size:13.5px}
+/* phones */
+.stage{position:relative;height:560px;display:flex;justify-content:center;align-items:center}
+.ph{position:absolute;width:250px;aspect-ratio:9/19;background:#1e0f08;border-radius:38px;padding:9px;box-shadow:0 30px 60px rgba(0,0,0,.45),inset 0 0 0 2px #6b4430}
+.ph::before{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:62px;height:16px;background:#1e0f08;border-radius:10px;z-index:3}
+.scr{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:var(--cream)}
+.scr img{position:absolute;inset:26px 0 0 0;width:100%;height:calc(100% - 26px);object-fit:cover;object-position:top;opacity:0;transform:translateX(26px);transition:opacity .8s,transform .8s}
+.scr img.on{opacity:1;transform:none}
+.ph.main{z-index:2;animation:fl 6s ease-in-out infinite}
+.ph.l{left:2%;transform:rotate(-9deg) scale(.82);opacity:.9;animation:fl2 7s ease-in-out infinite}
+.ph.r{right:2%;transform:rotate(9deg) scale(.82);opacity:.9;animation:fl3 7.5s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-16px)}}@keyframes fl2{50%{transform:rotate(-9deg) scale(.82) translateY(14px)}}@keyframes fl3{50%{transform:rotate(9deg) scale(.82) translateY(-12px)}}
+.chip{position:absolute;z-index:4;background:var(--cream);color:var(--ink);border-radius:14px;padding:8px 13px;font-weight:700;font-size:13px;box-shadow:0 10px 24px rgba(0,0,0,.3);animation:fl 5s ease-in-out infinite}
+.chip.g{color:var(--green)}.chip.c{color:var(--cherry)}
+/* marquee */
+.mq{background:var(--choc);color:var(--cream);overflow:hidden;padding:14px 0;white-space:nowrap}
+.mq div{display:inline-block;animation:mq 38s linear infinite;font-weight:700;font-size:20px}
+.mq span{margin:0 22px}.mq i{color:#F2C48D;font-style:normal}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:60px 0}h2{font-size:34px;color:var(--choc);margin:0 0 8px;letter-spacing:-.4px}.sec{color:var(--inkm);margin:0 0 30px;max-width:560px}
+.center{text-align:center}.center .sec{margin-left:auto;margin-right:auto}
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}.rv.on{opacity:1;transform:none}
+/* features */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--surf);border:1px solid var(--border);border-radius:20px;padding:22px;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(91,43,23,.12)}
+.ic{width:48px;height:48px;border-radius:14px;background:var(--muted);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:12px}
+.card h3{margin:0 0 6px;font-size:18px;color:var(--choc)}.card p{margin:0;color:var(--inkm);font-size:14.5px}
+/* steps */
+.steps{background:var(--surf);border-block:1px solid var(--border)}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.st div{position:relative;padding:20px 20px 20px 20px;background:var(--cream);border:1px solid var(--border);border-radius:18px}
+.st div::before{counter-increment:s;content:counter(s);display:flex;width:34px;height:34px;border-radius:50%;background:var(--choc);color:var(--cream);font-weight:800;align-items:center;justify-content:center;margin-bottom:10px}
+.st h4{margin:0 0 4px;font-size:17px;color:var(--choc)}.st p{margin:0;color:var(--inkm);font-size:14.5px}
+/* trades */
+.trades{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.trades span{background:var(--surf);border:1px solid var(--border);padding:10px 16px;border-radius:24px;font-weight:600;font-size:15px;transition:.2s}
+.trades span:hover{background:var(--choc);color:var(--cream);transform:scale(1.06)}
+/* languages */
+.lang{background:var(--deep);color:var(--cream)}.lang h2{color:var(--cream)}.lang .sec{color:var(--onch)}
+.lg{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lg div{background:rgba(251,244,233,.08);border:1px solid rgba(251,244,233,.2);border-radius:16px;padding:12px 18px;min-width:128px;text-align:center;animation:pop 4s ease-in-out infinite}
+.lg div:nth-child(2n){animation-delay:.6s}.lg div:nth-child(3n){animation-delay:1.2s}
+.lg b{display:block;font-size:21px}.lg small{color:var(--onch);font-size:12px}
+@keyframes pop{50%{transform:translateY(-6px);background:rgba(251,244,233,.16)}}
+/* plans */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:760px;margin:0 auto}
+.plan{background:var(--surf);border:1px solid var(--border);border-radius:22px;padding:26px}
+.plan.pro{background:var(--choc);color:var(--cream);border-color:var(--choc)}
+.plan h3{margin:0;font-size:22px}.plan .pr{font-size:15px;color:var(--inkm);margin:2px 0 14px}.plan.pro .pr{color:var(--onch)}
+.plan ul{list-style:none;padding:0;margin:0}.plan li{padding:5px 0 5px 26px;position:relative;font-size:14.5px}
+.plan li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}.plan.pro li::before{color:#8fe3b2}
+/* faq */
+.faq{max-width:760px;margin:0 auto}details{background:var(--surf);border:1px solid var(--border);border-radius:16px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;color:var(--choc)}details p{margin:8px 0 0;color:var(--inkm);font-size:14.5px}
+.cta{background:radial-gradient(700px 300px at 50% 0,#7a3b22,var(--deep));color:var(--cream);text-align:center}.cta h2{color:var(--cream)}
+footer{background:var(--surf);border-top:1px solid var(--border);color:var(--inkm);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;padding:22px 20px;flex-wrap:wrap;gap:10px}footer a{font-weight:700;color:var(--choc)}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-top:36px}h1{font-size:36px}.stage{height:500px}.grid,.st,.plans{grid-template-columns:1fr}.nav nav a.hide{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.scr img.on{opacity:1}.rv{opacity:1;transform:none}}
 </style></head><body>
 <header><div class="wrap nav"><a class="brand" href="#"><img src="icon.png" alt="">Raqam Book</a>
-<nav><a class="link hide" href="#features">Khaasiyat</a><a class="link hide" href="#how">Kaise kaam karta hai</a><a class="link" href="privacy.html">Privacy Policy</a></nav></div></header>
+<nav><a class="hide" href="#features">Khaasiyat</a><a class="hide" href="#languages">Bhashayein</a><a class="hide" href="#plans">Plans</a><a class="hide" href="#faq">FAQ</a><a class="dl" href="#download">Download</a></nav></div></header>
 
-<section class="wrap hero"><div>
-<h1>Aapki dukaan ka hisaab,<br>aapki jeb mein.</h1>
-<p class="lead">Raqam Book dukaan aur ghar ke liye ek aasaan digital khaata hai. Customer ka udhaar, bikri, kharcha aur staff ki salary, sab ek hi jagah. English ya Hindi mein.</p>
-<a class="btn" href="#"><span style="font-size:24px">▶</span><span><small>GET IT ON</small><b>Google Play</b></span></a>
-<div class="sub">Shuru karna free · Aapke phone par chalta hai · Aapka data aapke apne login ke andar</div></div>
-<div class="phone"><img src="shot1.png" alt="Raqam Book Income and Expense screen"></div></section>
+<div class="hero"><div class="wrap"><div>
+<span class="tag">📒 Dukaan aur ghar, dono ka khaata</span>
+<h1>Hisaab ab <em>haath mein</em>, kaagaz ki jhanjhat nahi.</h1>
+<p class="lead">Customer ka udhaar, bikri, kharcha aur staff ki salary, sab ek app mein. English aur Hindi mein taiyaar, baaki Indian bhashayein aa rahi hain.</p>
+<a class="btn" href="#download"><span style="font-size:24px">▶</span><span><small>GET IT ON</small><b>Google Play</b></span></a>
+<div class="sub">Free mein shuru karein · Aapka data aapke apne login ke andar</div></div>
+<div class="stage">
+<div class="ph l"><div class="scr" data-s="2,6,3,7"></div></div>
+<div class="ph r"><div class="scr" data-s="7,4,5,2"></div></div>
+<div class="ph main"><div class="scr" data-s="1,2,3,4,5,6,7"></div></div>
+<div class="chip g" style="top:70px;right:0">+₹40,000 Salary</div><div class="chip c" style="bottom:90px;left:0;animation-delay:-2s">−₹6,500 Grocery</div></div></div></div>
 
-<section class="wrap" id="features"><div class="cards">
-<div class="card"><div class="ic">👥</div><h3>Customer khaata</h3><p>Kaun aapko dega aur aapko kise dena hai, sab dekhein. Statement ya reminder ek tap mein bhejein.</p></div>
-<div class="card"><div class="ic">🏪</div><h3>Self Business</h3><p>Bikri aur kharid likhein aur mahine ka balance dekhein.</p></div>
-<div class="card"><div class="ic">🏠</div><h3>Income &amp; Expense</h3><p>Paisa kahan gaya, pata chalega. Categories, Auto Repeat aur mahine ki report.</p></div>
-<div class="card"><div class="ic">💼</div><h3>Staff Salary</h3><p>Roz ki attendance, chhutti ki katauti, advance aur kitna dena baaki hai.</p></div></div></section>
+<div class="mq"><div id="mq"></div></div>
 
-<section class="band" id="how"><div class="wrap">
-<div><span class="n">1</span><h4>Entry daalein</h4><p>Type karein ya bol kar likhwayein. Category chunein, bas.</p></div>
-<div><span class="n">2</span><h4>Balance dekhein</h4><p>Upar ke card mein dikhta hai kitna lena hai, kitna dena hai aur kitna bacha.</p></div>
-<div><span class="n">3</span><h4>Share karein</h4><p>Customer ko saaf PDF ya Excel statement bhejein, ya apne Google Drive mein backup rakhein.</p></div></div></section>
+<section id="features"><div class="wrap"><div class="center rv"><h2>Ek app, saare khaate</h2><p class="sec">Har cheez ka apna alag khaata, kuch aapas mein mix nahi hota.</p></div>
+<div class="grid">
+<div class="card rv"><div class="ic">👥</div><h3>Customer khaata</h3><p>Kaun dega, kise dena hai. Statement ya reminder ek tap mein.</p></div>
+<div class="card rv"><div class="ic">🏪</div><h3>Self Business</h3><p>Bikri aur kharid likhein, mahine ka balance dekhein.</p></div>
+<div class="card rv"><div class="ic">🏠</div><h3>Income &amp; Expense</h3><p>Paisa kahan gaya, categories ke saath. Aapki apni categories bhi.</p></div>
+<div class="card rv"><div class="ic">💼</div><h3>Staff Salary</h3><p>Attendance, chhutti ki katauti, advance aur baaki salary.</p></div>
+<div class="card rv"><div class="ic">🔁</div><h3>Auto Repeat</h3><p>Rent ya EMI jaisi entry tay din apne aap likh jaati hai.</p></div>
+<div class="card rv"><div class="ic">🎙️</div><h3>Bol kar likhein</h3><p>Type ki jagah bol dein, entry taiyaar.</p></div>
+<div class="card rv"><div class="ic">📄</div><h3>PDF &amp; Excel</h3><p>Saaf statement aur report banayein aur share karein.</p></div>
+<div class="card rv"><div class="ic">☁️</div><h3>Backup &amp; sync</h3><p>Google Drive backup, aur doosre phone par wahi khaata.</p></div>
+<div class="card rv"><div class="ic">🔒</div><h3>App lock</h3><p>PIN ya fingerprint se aapka hisaab sirf aapka.</p></div></div></div></section>
 
-<section class="wrap shots"><h2>Ek jhalak</h2><p>Saaf, simple aur padhne mein aasaan.</p>
-<div class="row"><div class="phone"><img src="shot2.png" alt="Staff Salary"></div><div class="phone"><img src="shot3.png" alt="Add entry"></div></div></section>
+<section class="steps"><div class="wrap"><div class="center rv"><h2>Teen kadam mein</h2></div><div class="st">
+<div class="rv"><h4>Entry daalein</h4><p>Type karein ya bolein. Category chunein, bas.</p></div>
+<div class="rv"><h4>Balance dekhein</h4><p>Card mein kitna lena, kitna dena aur kitna bacha, turant.</p></div>
+<div class="rv"><h4>Share karein</h4><p>PDF ya Excel bhejein, ya Drive mein backup rakhein.</p></div></div></div></section>
 
-<section class="wrap cta"><h2>Aaj se apna hisaab likhna shuru karein</h2>
-<a class="btn" href="#"><span style="font-size:24px">▶</span><span><small>GET IT ON</small><b>Google Play</b></span></a></section>
+<section><div class="wrap center"><div class="rv"><h2>Har tarah ke kaam ke liye</h2><p class="sec">Chhoti dukaan se ghar ke kharche tak. Apni chip bana kar apna alag khaata rakhein.</p></div>
+<div class="trades rv"><span>🛒 Kirana</span><span>💊 Medical store</span><span>📱 Mobile shop</span><span>🧵 Darzi</span><span>🥛 Dairy</span><span>🔧 Hardware</span><span>💇 Salon</span><span>🚚 Transport</span><span>🌾 Kheti</span><span>👕 Kapde</span><span>🍽️ Dhaba</span><span>🏠 Ghar ka kharcha</span></div></div></section>
+
+<section class="lang" id="languages"><div class="wrap center"><div class="rv"><h2>Apni bhasha mein khaata</h2><p class="sec">App English aur Hindi mein poora taiyaar hai. Baaki Indian bhashayein aa rahi hain. Settings → Language mein jab chahein badal lein.</p></div>
+<div class="lg rv" id="lg"></div></div></section>
+
+<section id="plans"><div class="wrap"><div class="center rv"><h2>Plans</h2><p class="sec">Shuru karna free hai. Premium sirf ads hatane ke liye.</p></div>
+<div class="plans"><div class="plan rv"><h3>Free</h3><div class="pr">Hamesha</div><ul><li>Saare chips aur khaate</li><li>PDF &amp; Excel statement</li><li>Backup aur sync</li><li>Kabhi kabhi ads</li></ul></div>
+<div class="plan pro rv"><h3>Premium</h3><div class="pr">Mahine ka plan · keemat Google Play par</div><ul><li>Free ki saari khaasiyat</li><li>Ads bilkul band</li><li>Kabhi bhi band kar sakte hain</li></ul></div></div></div></section>
+
+<section class="steps" id="faq"><div class="wrap"><div class="center rv"><h2>Aksar poochhe jaane wale sawal</h2></div><div class="faq">
+<details class="rv"><summary>Kya Raqam Book free hai?</summary><p>Haan, free mein shuru kar sakte hain. Premium sirf ads hatata hai.</p></details>
+<details class="rv"><summary>Mera data kahan rehta hai?</summary><p>Aapke phone par aur aapke apne login ke andar Firebase mein. Hum aapka data bechte nahi.</p></details>
+<details class="rv"><summary>Phone badalne par khaata kaise milega?</summary><p>Usi login se login karein, ya Google Drive ka backup restore karein.</p></details>
+<details class="rv"><summary>Kya bina internet chalta hai?</summary><p>Haan, entry offline likh sakte hain. Internet aane par sync ho jaata hai.</p></details>
+<details class="rv"><summary>Account kaise delete karein?</summary><p>App mein Profile → Delete Account, ya <a href="delete-account.html">yahan</a> dekhein.</p></details></div></div></section>
+
+<section class="cta" id="download"><div class="wrap rv"><h2>Aaj se apna hisaab likhna shuru karein</h2><p style="color:var(--onch);margin:0 0 22px">Google Play se Raqam Book download karein.</p>
+<a class="btn" href="#"><span style="font-size:24px">▶</span><span><small>GET IT ON</small><b>Google Play</b></span></a></div></section>
 
 <footer><div class="wrap"><span>© 2026 Raqam Book</span><span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a> · <a href="refund.html">Refund</a> · <a href="delete-account.html">Delete account</a> · <a href="mailto:raqambook@gmail.com">Sampark</a></span></div></footer>
-</body></html>
+<script>
+const L=[["English","Ready"],["हिन्दी","Ready"],["Hinglish","Jald"],["मराठी","Jald"],["ગુજરાતી","Jald"],["ਪੰਜਾਬੀ","Jald"],["বাংলা","Jald"],["தமிழ்","Jald"],["తెలుగు","Jald"],["ಕನ್ನಡ","Jald"],["മലയാളം","Jald"],["ଓଡ଼ିଆ","Jald"],["অসমীয়া","Jald"]];
+document.getElementById("lg").innerHTML=L.map(x=>`<div><b>${x[0]}</b><small>${x[1]=="Ready"?"✓ Taiyaar":"Jald aa raha hai"}</small></div>`).join("");
+const m=L.map(x=>`<span>${x[0]}</span><i>●</i>`).join("");document.getElementById("mq").innerHTML=m+m;
+document.querySelectorAll(".scr").forEach((el,k)=>{const L=el.dataset.s.split(",");L.forEach(n=>{const i=new Image();i.src="app"+n+".jpg";i.alt="Raqam Book screen";el.appendChild(i)});let c=0;const im=el.children;const go=()=>{[...im].forEach((x,j)=>x.classList.toggle("on",j===c));c=(c+1)%im.length};setTimeout(()=>{go();setInterval(go,3200)},k*900)});
+const io=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting){i.target.classList.add("on");io.unobserve(i.target)}}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(n=>io.observe(n));
+</script></body></html>
