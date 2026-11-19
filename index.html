@@ -23,18 +23,29 @@ h1 em{font-style:normal;color:#F2C48D}
 .btn.dark{background:var(--choc);color:var(--cream)}.btn.dark small{color:var(--onch)}
 .sub{margin-top:14px;color:var(--onch);font-size:13.5px}
 /* phones */
-.stage{position:relative;height:470px;margin-top:10px;display:flex;justify-content:center;align-items:center}
-.ph{position:absolute;width:205px;aspect-ratio:9/19;background:#1e0f08;border-radius:38px;padding:9px;box-shadow:0 30px 60px rgba(0,0,0,.45),inset 0 0 0 2px #6b4430}
+.stage{position:relative;margin-top:14px;display:flex;justify-content:center}
+.ph{position:relative;width:236px;aspect-ratio:9/19;background:#1e0f08;border-radius:38px;padding:9px;box-shadow:0 30px 60px rgba(0,0,0,.45),inset 0 0 0 2px #6b4430}
 .ph::before{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:62px;height:16px;background:#1e0f08;border-radius:10px;z-index:3}
 .scr{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:var(--cream)}
 .scr img{position:absolute;inset:26px 0 0 0;width:100%;height:calc(100% - 26px);object-fit:cover;object-position:top;opacity:0;transform:translateX(26px);transition:opacity .8s,transform .8s}
 .scr img.on{opacity:1;transform:none}
 .ph.main{z-index:2;animation:fl 6s ease-in-out infinite}
-.ph.l{left:-6%;transform:rotate(-9deg) scale(.8);opacity:.9;animation:fl2 7s ease-in-out infinite}
-.ph.r{right:-6%;transform:rotate(9deg) scale(.82);opacity:.9;animation:fl3 7.5s ease-in-out infinite}
 @keyframes fl{50%{transform:translateY(-16px)}}@keyframes fl2{50%{transform:rotate(-9deg) scale(.82) translateY(14px)}}@keyframes fl3{50%{transform:rotate(9deg) scale(.82) translateY(-12px)}}
 .chip{position:absolute;z-index:4;background:var(--cream);color:var(--ink);border-radius:14px;padding:8px 13px;font-weight:700;font-size:13px;box-shadow:0 10px 24px rgba(0,0,0,.3);animation:fl 5s ease-in-out infinite}
 .chip.g{color:var(--green)}.chip.c{color:var(--cherry)}
+.fr{position:relative;flex:none;width:200px;aspect-ratio:9/19;background:#1e0f08;border-radius:34px;padding:8px;box-shadow:0 14px 30px rgba(91,43,23,.3),inset 0 0 0 2px #6b4430}
+.fr::before{content:"";position:absolute;top:13px;left:50%;transform:translateX(-50%);width:54px;height:14px;background:#1e0f08;border-radius:9px;z-index:3}
+.fr::after,.ph::after{content:"";position:absolute;right:-3px;top:92px;width:3px;height:46px;background:#6b4430;border-radius:0 3px 3px 0}
+.car .fr .scr img{opacity:1;transform:none;transition:none;inset:22px 0 0 0;height:calc(100% - 22px);position:absolute;width:100%;object-fit:cover;object-position:top}
+.car{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 16px 22px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.car::-webkit-scrollbar{display:none}
+.car figure{margin:0;scroll-snap-align:center;text-align:center;flex:none}.car figcaption{margin-top:12px;font-weight:700;color:var(--choc);font-size:14px}
+.hint{text-align:center;color:var(--inkm);font-size:12.5px;margin-top:-6px}
+.wa .scr{background:#EFE3CF}.chatin{padding:46px 10px 10px;display:flex;flex-direction:column;gap:7px}
+.wh{position:absolute;left:0;right:0;top:0;z-index:2;background:var(--choc);color:var(--cream);padding:26px 12px 7px;font-weight:700;font-size:12.5px;display:flex;align-items:center;gap:7px}.wh i{width:22px;height:22px;border-radius:50%;background:#C7A27A;color:var(--choc);font-style:normal;display:flex;align-items:center;justify-content:center;font-size:11px}
+.chatin .b{align-self:flex-end;background:#E3F4EA;border-radius:12px 12px 2px 12px;padding:4px;width:84%;box-shadow:0 1px 2px rgba(0,0,0,.12)}.chatin .b img{display:block;position:static;opacity:1;transform:none;transition:none;width:100%;height:auto;border-radius:9px}.chatin .b small{display:block;text-align:right;font-size:9px;color:var(--inkm);padding:2px 5px 0}
+.chatin .b{animation:bp 10s infinite both}.chatin .b:nth-child(2){animation-delay:1.3s}.chatin .b:nth-child(3){animation-delay:2.6s}
+@keyframes bp{0%{opacity:0;transform:translateY(16px)}6%,86%{opacity:1;transform:none}94%,100%{opacity:0}}
+.wawrap{display:flex;flex-direction:column;align-items:center;gap:18px}
 /* marquee */
 .mq{background:var(--choc);color:var(--cream);overflow:hidden;padding:14px 0;white-space:nowrap}
 .mq div{display:inline-block;animation:mq 38s linear infinite;font-weight:700;font-size:20px}
@@ -92,10 +103,8 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;paddi
 <a class="btn" href="#download"><span style="font-size:24px">▶</span><span><small>GET IT ON</small><b>Google Play</b></span></a>
 <div class="sub">Free mein shuru karein · Aapka data aapke apne login ke andar</div></div>
 <div class="stage">
-<div class="ph l"><div class="scr" data-s="2,6,3,7"></div></div>
-<div class="ph r"><div class="scr" data-s="7,4,5,2"></div></div>
-<div class="ph main"><div class="scr" data-s="1,2,3,4,5,6,7"></div></div>
-<div class="chip g" style="top:70px;right:0">+₹40,000 Salary</div><div class="chip c" style="bottom:90px;left:0;animation-delay:-2s">−₹6,500 Grocery</div></div></div></div>
+<div class="ph main"><div class="scr" data-s="1,2,3,8,4,5,6,7"></div></div>
+<div class="chip g" style="top:60px;right:8px">+₹40,000 Salary</div><div class="chip c" style="bottom:70px;left:8px;animation-delay:-2s">−₹6,500 Grocery</div></div></div></div>
 
 <div class="mq"><div id="mq"></div></div>
 
@@ -111,7 +120,10 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;paddi
 <div class="card rv"><div class="ic">☁️</div><h3>Backup &amp; sync</h3><p>Google Drive backup, aur doosre phone par wahi khaata.</p></div>
 <div class="card rv"><div class="ic">🔒</div><h3>App lock</h3><p>PIN ya fingerprint se aapka hisaab sirf aapka.</p></div></div></div></section>
 
-<section class="steps"><div class="wrap"><div class="center rv"><h2>Teen kadam mein</h2></div><div class="st">
+<section style="padding-bottom:20px"><div class="wrap center rv"><h2>Ek jhalak</h2><p class="sec">Seedha app ke asli screen.</p></div><div class="car"><figure><div class="fr"><div class="scr"><img src="app2.jpg" alt="Customers" loading="lazy"></div></div><figcaption>Customers</figcaption></figure><figure><div class="fr"><div class="scr"><img src="app3.jpg" alt="Staff Salary" loading="lazy"></div></div><figcaption>Staff Salary</figcaption></figure><figure><div class="fr"><div class="scr"><img src="app8.jpg" alt="Salary calendar" loading="lazy"></div></div><figcaption>Salary calendar</figcaption></figure><figure><div class="fr"><div class="scr"><img src="app4.jpg" alt="Self Business" loading="lazy"></div></div><figcaption>Self Business</figcaption></figure><figure><div class="fr"><div class="scr"><img src="app1.jpg" alt="Income &amp; Expense" loading="lazy"></div></div><figcaption>Income &amp; Expense</figcaption></figure><figure><div class="fr"><div class="scr"><img src="app5.jpg" alt="Monthly report" loading="lazy"></div></div><figcaption>Monthly report</figcaption></figure><figure><div class="fr"><div class="scr"><img src="app6.jpg" alt="Add entry" loading="lazy"></div></div><figcaption>Add entry</figcaption></figure><figure><div class="fr"><div class="scr"><img src="app7.jpg" alt="Manage chips" loading="lazy"></div></div><figcaption>Manage chips</figcaption></figure></div><div class="hint">← swipe karke dekhein →</div></section>
+<section class="steps"><div class="wrap"><div class="center rv"><h2>WhatsApp par saaf card</h2><p class="sec">Statement, reminder ya salary slip, ek tap mein sundar card banakar bhejein.</p></div>
+<div class="wawrap rv"><div class="fr wa" style="width:236px"><div class="scr"><div class="wh"><i>R</i>Rahim Khan</div><div class="chatin"><div class="b"><img src="card_statement.jpg" alt="Statement card"><small>10:42 ✓✓</small></div><div class="b"><img src="card_entry.jpg" alt="Entry card"><small>10:43 ✓✓</small></div><div class="b"><img src="card_slip.jpg" alt="Salary slip card"><small>10:45 ✓✓</small></div></div></div></div></div></div></section>
+<section><div class="wrap"><div class="center rv"><h2>Teen kadam mein</h2></div><div class="st">
 <div class="rv"><h4>Entry daalein</h4><p>Type karein ya bolein. Category chunein, bas.</p></div>
 <div class="rv"><h4>Balance dekhein</h4><p>Card mein kitna lena, kitna dena aur kitna bacha, turant.</p></div>
 <div class="rv"><h4>Share karein</h4><p>PDF ya Excel bhejein, ya Drive mein backup rakhein.</p></div></div></div></section>
@@ -141,7 +153,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;paddi
 const L=[["English","English"],["हिन्दी","Hindi"],["Hinglish","Roman Hindi"],["मराठी","Marathi"],["ગુજરાતી","Gujarati"],["ਪੰਜਾਬੀ","Punjabi"],["বাংলা","Bengali"],["தமிழ்","Tamil"],["తెలుగు","Telugu"],["ಕನ್ನಡ","Kannada"],["മലയാളം","Malayalam"],["ଓଡ଼ିଆ","Odia"],["অসমীয়া","Assamese"]];
 document.getElementById("lg").innerHTML=L.map(x=>`<div><b>${x[0]}</b><small>${x[1]}</small></div>`).join("");
 const m=L.map(x=>`<span>${x[0]}</span><i>●</i>`).join("");document.getElementById("mq").innerHTML=m+m;
-document.querySelectorAll(".scr").forEach((el,k)=>{const L=el.dataset.s.split(",");L.forEach(n=>{const i=new Image();i.src="app"+n+".jpg";i.alt="Raqam Book screen";el.appendChild(i)});let c=0;const im=el.children;const go=()=>{[...im].forEach((x,j)=>x.classList.toggle("on",j===c));c=(c+1)%im.length};setTimeout(()=>{go();setInterval(go,3200)},k*900)});
+document.querySelectorAll(".scr[data-s]").forEach((el,k)=>{const L=el.dataset.s.split(",");L.forEach(n=>{const i=new Image();i.src="app"+n+".jpg";i.alt="Raqam Book screen";el.appendChild(i)});let c=0;const im=el.children;const go=()=>{[...im].forEach((x,j)=>x.classList.toggle("on",j===c));c=(c+1)%im.length};setTimeout(()=>{go();setInterval(go,3200)},k*900)});
 const io=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting){i.target.classList.add("on");io.unobserve(i.target)}}),{threshold:.15});
 document.querySelectorAll(".rv").forEach(n=>io.observe(n));
 </script></body></html>
