@@ -4,34 +4,34 @@
 <style>
 :root{--cream:#FBF4E9;--surf:#F8EFE2;--muted:#F3E8D8;--border:#EADCC8;--ink:#3A2318;--inkm:#6E5446;--choc:#5B2B17;--deep:#3F1D10;--onch:#E9D5C0;--green:#0E9F4F;--gl:#E3F4EA;--cherry:#E02424;--cl:#FCE4E2}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:Roboto,"Segoe UI",Arial,sans-serif;line-height:1.55;overflow-x:hidden}
-a{color:inherit}.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+body{margin:0;background:#E6D6BF;color:var(--ink);font-family:Roboto,"Segoe UI",Arial,sans-serif;line-height:1.55;overflow-x:hidden}
+a{color:inherit}.app{max-width:480px;margin:0 auto;background:var(--cream);box-shadow:0 0 50px rgba(91,43,23,.18);overflow:hidden}.wrap{padding:0 16px}
 header{position:sticky;top:0;z-index:20;background:rgba(251,244,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:62px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--choc);text-decoration:none}.brand img{width:34px;height:34px;border-radius:9px}
-.nav nav a{color:var(--inkm);text-decoration:none;font-weight:600;margin-left:20px;font-size:14.5px}
-.nav .dl{background:var(--choc);color:var(--cream);padding:8px 16px;border-radius:20px}
+.nav nav a{color:var(--inkm);text-decoration:none;font-weight:600;margin-left:20px;font-size:14.5px;display:none}
+.nav nav a.dl{display:inline-block;background:var(--choc);color:var(--cream);padding:8px 16px;border-radius:20px;margin:0}
 /* hero */
 .hero{background:radial-gradient(900px 500px at 80% 40%,#7a3b22 0,var(--deep) 60%);color:var(--cream);overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding-top:56px;padding-bottom:64px}
+.hero .wrap{padding-top:28px;padding-bottom:30px}
 .tag{display:inline-block;background:rgba(251,244,233,.12);border:1px solid rgba(251,244,233,.25);padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:16px}
-h1{font-size:48px;line-height:1.08;margin:0 0 16px;letter-spacing:-.8px}
+h1{font-size:33px;line-height:1.08;margin:0 0 16px;letter-spacing:-.8px}
 h1 em{font-style:normal;color:#F2C48D}
-.lead{font-size:18.5px;color:var(--onch);margin:0 0 26px;max-width:470px}
+.lead{font-size:16px;color:var(--onch);margin:0 0 20px}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--cream);color:var(--choc);padding:13px 24px;border-radius:30px;font-weight:800;font-size:16px;text-decoration:none;transition:transform .2s}
 .btn:hover{transform:translateY(-2px) scale(1.03)}.btn small{display:block;font-weight:600;font-size:10.5px;color:var(--inkm);line-height:1}.btn b{display:block;line-height:1.15}
 .btn.dark{background:var(--choc);color:var(--cream)}.btn.dark small{color:var(--onch)}
 .sub{margin-top:14px;color:var(--onch);font-size:13.5px}
 /* phones */
-.stage{position:relative;height:560px;display:flex;justify-content:center;align-items:center}
-.ph{position:absolute;width:250px;aspect-ratio:9/19;background:#1e0f08;border-radius:38px;padding:9px;box-shadow:0 30px 60px rgba(0,0,0,.45),inset 0 0 0 2px #6b4430}
+.stage{position:relative;height:470px;margin-top:10px;display:flex;justify-content:center;align-items:center}
+.ph{position:absolute;width:205px;aspect-ratio:9/19;background:#1e0f08;border-radius:38px;padding:9px;box-shadow:0 30px 60px rgba(0,0,0,.45),inset 0 0 0 2px #6b4430}
 .ph::before{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:62px;height:16px;background:#1e0f08;border-radius:10px;z-index:3}
 .scr{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:var(--cream)}
 .scr img{position:absolute;inset:26px 0 0 0;width:100%;height:calc(100% - 26px);object-fit:cover;object-position:top;opacity:0;transform:translateX(26px);transition:opacity .8s,transform .8s}
 .scr img.on{opacity:1;transform:none}
 .ph.main{z-index:2;animation:fl 6s ease-in-out infinite}
-.ph.l{left:2%;transform:rotate(-9deg) scale(.82);opacity:.9;animation:fl2 7s ease-in-out infinite}
-.ph.r{right:2%;transform:rotate(9deg) scale(.82);opacity:.9;animation:fl3 7.5s ease-in-out infinite}
+.ph.l{left:-6%;transform:rotate(-9deg) scale(.8);opacity:.9;animation:fl2 7s ease-in-out infinite}
+.ph.r{right:-6%;transform:rotate(9deg) scale(.82);opacity:.9;animation:fl3 7.5s ease-in-out infinite}
 @keyframes fl{50%{transform:translateY(-16px)}}@keyframes fl2{50%{transform:rotate(-9deg) scale(.82) translateY(14px)}}@keyframes fl3{50%{transform:rotate(9deg) scale(.82) translateY(-12px)}}
 .chip{position:absolute;z-index:4;background:var(--cream);color:var(--ink);border-radius:14px;padding:8px 13px;font-weight:700;font-size:13px;box-shadow:0 10px 24px rgba(0,0,0,.3);animation:fl 5s ease-in-out infinite}
 .chip.g{color:var(--green)}.chip.c{color:var(--cherry)}
@@ -40,19 +40,19 @@ h1 em{font-style:normal;color:#F2C48D}
 .mq div{display:inline-block;animation:mq 38s linear infinite;font-weight:700;font-size:20px}
 .mq span{margin:0 22px}.mq i{color:#F2C48D;font-style:normal}
 @keyframes mq{to{transform:translateX(-50%)}}
-section{padding:60px 0}h2{font-size:34px;color:var(--choc);margin:0 0 8px;letter-spacing:-.4px}.sec{color:var(--inkm);margin:0 0 30px;max-width:560px}
+section{padding:38px 0}h2{font-size:26px;color:var(--choc);margin:0 0 8px;letter-spacing:-.4px}.sec{color:var(--inkm);margin:0 0 30px;max-width:560px}
 .center{text-align:center}.center .sec{margin-left:auto;margin-right:auto}
 /* reveal */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}.rv.on{opacity:1;transform:none}
 /* features */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:var(--surf);border:1px solid var(--border);border-radius:20px;padding:22px;transition:transform .25s,box-shadow .25s}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:var(--surf);border:1px solid var(--border);border-radius:18px;padding:16px;transition:transform .25s,box-shadow .25s}
 .card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(91,43,23,.12)}
 .ic{width:48px;height:48px;border-radius:14px;background:var(--muted);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:12px}
-.card h3{margin:0 0 6px;font-size:18px;color:var(--choc)}.card p{margin:0;color:var(--inkm);font-size:14.5px}
+.card h3{margin:0 0 4px;font-size:16px;color:var(--choc)}.card p{margin:0;color:var(--inkm);font-size:13.5px}
 /* steps */
 .steps{background:var(--surf);border-block:1px solid var(--border)}
-.st{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.st{display:grid;grid-template-columns:1fr;gap:12px;counter-reset:s}
 .st div{position:relative;padding:20px 20px 20px 20px;background:var(--cream);border:1px solid var(--border);border-radius:18px}
 .st div::before{counter-increment:s;content:counter(s);display:flex;width:34px;height:34px;border-radius:50%;background:var(--choc);color:var(--cream);font-weight:800;align-items:center;justify-content:center;margin-bottom:10px}
 .st h4{margin:0 0 4px;font-size:17px;color:var(--choc)}.st p{margin:0;color:var(--inkm);font-size:14.5px}
@@ -62,34 +62,33 @@ section{padding:60px 0}h2{font-size:34px;color:var(--choc);margin:0 0 8px;letter
 .trades span:hover{background:var(--choc);color:var(--cream);transform:scale(1.06)}
 /* languages */
 .lang{background:var(--deep);color:var(--cream)}.lang h2{color:var(--cream)}.lang .sec{color:var(--onch)}
-.lg{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.lg div{background:rgba(251,244,233,.08);border:1px solid rgba(251,244,233,.2);border-radius:16px;padding:12px 18px;min-width:128px;text-align:center;animation:pop 4s ease-in-out infinite}
+.lg{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.lg div{background:rgba(251,244,233,.08);border:1px solid rgba(251,244,233,.2);border-radius:14px;padding:10px 6px;width:calc(33.3% - 8px);text-align:center;animation:pop 4s ease-in-out infinite}
 .lg div:nth-child(2n){animation-delay:.6s}.lg div:nth-child(3n){animation-delay:1.2s}
-.lg b{display:block;font-size:21px}.lg small{color:var(--onch);font-size:12px}
+.lg b{display:block;font-size:19px}.lg small{color:var(--onch);font-size:12px}
 @keyframes pop{50%{transform:translateY(-6px);background:rgba(251,244,233,.16)}}
 /* plans */
-.plans{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:760px;margin:0 auto}
+.plans{display:grid;grid-template-columns:1fr;gap:14px}
 .plan{background:var(--surf);border:1px solid var(--border);border-radius:22px;padding:26px}
 .plan.pro{background:var(--choc);color:var(--cream);border-color:var(--choc)}
 .plan h3{margin:0;font-size:22px}.plan .pr{font-size:15px;color:var(--inkm);margin:2px 0 14px}.plan.pro .pr{color:var(--onch)}
 .plan ul{list-style:none;padding:0;margin:0}.plan li{padding:5px 0 5px 26px;position:relative;font-size:14.5px}
 .plan li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}.plan.pro li::before{color:#8fe3b2}
 /* faq */
-.faq{max-width:760px;margin:0 auto}details{background:var(--surf);border:1px solid var(--border);border-radius:16px;padding:14px 18px;margin-bottom:10px}
+.faq{}details{background:var(--surf);border:1px solid var(--border);border-radius:16px;padding:14px 18px;margin-bottom:10px}
 summary{cursor:pointer;font-weight:700;color:var(--choc)}details p{margin:8px 0 0;color:var(--inkm);font-size:14.5px}
 .cta{background:radial-gradient(700px 300px at 50% 0,#7a3b22,var(--deep));color:var(--cream);text-align:center}.cta h2{color:var(--cream)}
 footer{background:var(--surf);border-top:1px solid var(--border);color:var(--inkm);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;padding:22px 20px;flex-wrap:wrap;gap:10px}footer a{font-weight:700;color:var(--choc)}
-@media(max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-top:36px}h1{font-size:36px}.stage{height:500px}.grid,.st,.plans{grid-template-columns:1fr}.nav nav a.hide{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.scr img.on{opacity:1}.rv{opacity:1;transform:none}}
 </style></head><body>
-<header><div class="wrap nav"><a class="brand" href="#"><img src="icon.png" alt="">Raqam Book</a>
-<nav><a class="hide" href="#features">Khaasiyat</a><a class="hide" href="#languages">Bhashayein</a><a class="hide" href="#plans">Plans</a><a class="hide" href="#faq">FAQ</a><a class="dl" href="#download">Download</a></nav></div></header>
+<div class="app"><header><div class="wrap nav"><a class="brand" href="#"><img src="icon.png" alt="">Raqam Book</a>
+<nav><a class="dl" href="#download">Download</a></nav></div></header>
 
 <div class="hero"><div class="wrap"><div>
 <span class="tag">📒 Dukaan aur ghar, dono ka khaata</span>
 <h1>Hisaab ab <em>haath mein</em>, kaagaz ki jhanjhat nahi.</h1>
-<p class="lead">Customer ka udhaar, bikri, kharcha aur staff ki salary, sab ek app mein. English aur Hindi mein taiyaar, baaki Indian bhashayein aa rahi hain.</p>
+<p class="lead">Customer ka udhaar, bikri, kharcha aur staff ki salary, sab ek app mein. Aapki apni bhasha mein.</p>
 <a class="btn" href="#download"><span style="font-size:24px">▶</span><span><small>GET IT ON</small><b>Google Play</b></span></a>
 <div class="sub">Free mein shuru karein · Aapka data aapke apne login ke andar</div></div>
 <div class="stage">
@@ -120,7 +119,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;paddi
 <section><div class="wrap center"><div class="rv"><h2>Har tarah ke kaam ke liye</h2><p class="sec">Chhoti dukaan se ghar ke kharche tak. Apni chip bana kar apna alag khaata rakhein.</p></div>
 <div class="trades rv"><span>🛒 Kirana</span><span>💊 Medical store</span><span>📱 Mobile shop</span><span>🧵 Darzi</span><span>🥛 Dairy</span><span>🔧 Hardware</span><span>💇 Salon</span><span>🚚 Transport</span><span>🌾 Kheti</span><span>👕 Kapde</span><span>🍽️ Dhaba</span><span>🏠 Ghar ka kharcha</span></div></div></section>
 
-<section class="lang" id="languages"><div class="wrap center"><div class="rv"><h2>Apni bhasha mein khaata</h2><p class="sec">App English aur Hindi mein poora taiyaar hai. Baaki Indian bhashayein aa rahi hain. Settings → Language mein jab chahein badal lein.</p></div>
+<section class="lang" id="languages"><div class="wrap center"><div class="rv"><h2>Apni bhasha mein khaata</h2><p class="sec">Raqam Book in 13 bhashaon mein hai. Settings → Language mein jab chahein badal lein.</p></div>
 <div class="lg rv" id="lg"></div></div></section>
 
 <section id="plans"><div class="wrap"><div class="center rv"><h2>Plans</h2><p class="sec">Shuru karna free hai. Premium sirf ads hatane ke liye.</p></div>
@@ -138,9 +137,9 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;paddi
 <a class="btn" href="#"><span style="font-size:24px">▶</span><span><small>GET IT ON</small><b>Google Play</b></span></a></div></section>
 
 <footer><div class="wrap"><span>© 2026 Raqam Book</span><span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a> · <a href="refund.html">Refund</a> · <a href="delete-account.html">Delete account</a> · <a href="mailto:raqambook@gmail.com">Sampark</a></span></div></footer>
-<script>
-const L=[["English","Ready"],["हिन्दी","Ready"],["Hinglish","Jald"],["मराठी","Jald"],["ગુજરાતી","Jald"],["ਪੰਜਾਬੀ","Jald"],["বাংলা","Jald"],["தமிழ்","Jald"],["తెలుగు","Jald"],["ಕನ್ನಡ","Jald"],["മലയാളം","Jald"],["ଓଡ଼ିଆ","Jald"],["অসমীয়া","Jald"]];
-document.getElementById("lg").innerHTML=L.map(x=>`<div><b>${x[0]}</b><small>${x[1]=="Ready"?"✓ Taiyaar":"Jald aa raha hai"}</small></div>`).join("");
+</div><script>
+const L=[["English","English"],["हिन्दी","Hindi"],["Hinglish","Roman Hindi"],["मराठी","Marathi"],["ગુજરાતી","Gujarati"],["ਪੰਜਾਬੀ","Punjabi"],["বাংলা","Bengali"],["தமிழ்","Tamil"],["తెలుగు","Telugu"],["ಕನ್ನಡ","Kannada"],["മലയാളം","Malayalam"],["ଓଡ଼ିଆ","Odia"],["অসমীয়া","Assamese"]];
+document.getElementById("lg").innerHTML=L.map(x=>`<div><b>${x[0]}</b><small>${x[1]}</small></div>`).join("");
 const m=L.map(x=>`<span>${x[0]}</span><i>●</i>`).join("");document.getElementById("mq").innerHTML=m+m;
 document.querySelectorAll(".scr").forEach((el,k)=>{const L=el.dataset.s.split(",");L.forEach(n=>{const i=new Image();i.src="app"+n+".jpg";i.alt="Raqam Book screen";el.appendChild(i)});let c=0;const im=el.children;const go=()=>{[...im].forEach((x,j)=>x.classList.toggle("on",j===c));c=(c+1)%im.length};setTimeout(()=>{go();setInterval(go,3200)},k*900)});
 const io=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting){i.target.classList.add("on");io.unobserve(i.target)}}),{threshold:.15});
